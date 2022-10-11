@@ -10,8 +10,10 @@ import java.nio.file.Paths;
 import java.nio.file.InvalidPathException;
 
 /**
+ * KLasa służąca do zapisu jednego z wybranych ciągów do pliku tekstowego
  *
  * @author dariusz
+ * @version 1.0.0
  */
 public class SeqToFileApp {
 
@@ -42,6 +44,13 @@ public class SeqToFileApp {
                 from, to, fileName);
     }
 
+    /**
+     * Główna funkcja odpowiedzialna za zapis do pliku. Funkcja jednocześnie
+     * sprawdza, czy argumenty z linii poleceń zostały pobrane prawidłowo i
+     * wyświetla stosowny komunikat o udanym zapisie bądź błędzie
+     *
+     * @param args Argumenty wiersza poleceń
+     */
     public void run(String[] args) {
         System.out.println("Sequence to file CLI app");
         if (!getArgs(args)) {

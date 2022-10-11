@@ -8,8 +8,11 @@ import java.math.BigDecimal;
 import pwo.utils.SequenceGenerator;
 
 /**
+ * Klasa abstrakcyjna spajająca wspólne elementy wszystkich generowanych ciągów.
+ * Pozostałe generatory dziedziczą po niej.
  *
  * @author dariusz
+ * @version 1.0.0
  */
 abstract class Generator implements SequenceGenerator {
 
@@ -19,11 +22,20 @@ abstract class Generator implements SequenceGenerator {
             f_2 = null,
             f_3 = null;
 
+    /**
+     * Funkcja resetująca index ostatniego wyliczanego wyrazu ciągu.
+     */
     @Override
     public void reset() {
         lastIndex = 0;
     }
 
+    /**
+     * Funkcja zwracająca podany wyraz ciągu
+     *
+     * @param i indeks wyrazu ciągu
+     * @return wyraz ciągu o indeksie i
+     */
     @Override
     public final BigDecimal getTerm(int i) {
         if (i < 0) {
